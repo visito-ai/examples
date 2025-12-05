@@ -85,12 +85,14 @@ Your endpoint will be available at:
 
 2. Test locally with curl
 
+```bash
 curl -X POST http://localhost:3000/tools/get-order-status \
  -H "Content-Type: application/json" \
  -d '{
 "arguments": { "order_number": "A-1002" },
 "meta": { "conversation": "conv_1", "contact": { "number": "5215512345678" } }
 }'
+```
 
 ⸻
 
@@ -122,12 +124,14 @@ Then your tool endpoint becomes:
 
 4. Test via the ngrok URL
 
+```bash
 curl -X POST https://abcd-12-34-56-78.ngrok-free.app/tools/get-order-status \
  -H "Content-Type: application/json" \
  -d '{
 "arguments": { "order_number": "A-1002" },
 "meta": { "conversation": "conv_public", "contact": { "number": "5215512345678" } }
 }'
+```
 
 How to wire this into your tool definition
 
@@ -142,11 +146,13 @@ Adding more tool endpoints
 
 Add another route to demo-tool-webhook-server.js, for example:
 
+```js
 app.post("/tools/create-appointment", async (req, res) => {
-const { arguments, meta } = req.body;
-// ... do work ...
-return res.json({ data: "Appointment created for Tue 10:30 AM" });
+  const { arguments, meta } = req.body;
+  // ... do work ...
+  return res.json({ data: "Appointment created for Tue 10:30 AM" });
 });
+```
 
 Then expose it through ngrok:
 • https://<your-ngrok-domain>/tools/create-appointment
