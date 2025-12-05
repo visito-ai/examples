@@ -45,26 +45,17 @@ Expected response:
 ### Expose the webhook with ngrok
 
 1. Install ngrok
-
 2. Start ngrok for port 3000
 
 ```bash
 ngrok http 3000
 ```
 
-ngrok will print a public URL like:
-
-- https://abcd-12-34-56-78.ngrok-free.app
+ngrok will print a public URL like: https://abcd-12-34-56-78.ngrok-free.app
 
 3. Your public webhook URL
 
-If ngrok gives you:
-
-- https://abcd-12-34-56-78.ngrok-free.app
-
-Then your tool endpoint becomes:
-
-- https://abcd-12-34-56-78.ngrok-free.app/tools/get-order-status
+Then your tool endpoint becomes: https://abcd-12-34-56-78.ngrok-free.app/tools/get-order-status
 
 4. Test via the ngrok URL
 
